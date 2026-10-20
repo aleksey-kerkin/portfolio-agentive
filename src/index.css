@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand ring-offset-2;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1200px] px-5 md:px-8;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-3 py-1 text-xs font-medium text-[#4b3fd9];
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-white shadow-card;
+  }
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg px-5 text-sm font-semibold transition;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white shadow-[0_8px_20px_rgba(47,91,255,.35)] hover:bg-[#2148e6];
+  }
+  .btn-ghost {
+    @apply btn border border-line bg-white text-ink shadow-card hover:bg-page;
+  }
+  .grad-text {
+    @apply bg-gradient-to-r from-brand to-brand-violet bg-clip-text text-transparent;
+  }
+}
