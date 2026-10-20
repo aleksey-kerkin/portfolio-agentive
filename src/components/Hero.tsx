@@ -28,7 +28,7 @@ export default function Hero() {
               Создать первого агента →
             </a>
             <a
-              href="#dashboard"
+              href="#live-panel"
               className="btn-ghost">
               ▷ Смотреть демо
             </a>
